@@ -13,8 +13,6 @@ Summary:        Utilities for implementing and composing `tracing` subscribers
 License:        MIT
 URL:            https://crates.io/crates/tracing-subscriber
 Source:         %{crates_source}
-# Initial patched metadata
-Patch0:         tracing-subscriber-fix-metadata.diff
 
 ExclusiveArch:  %{rust_arches}
 
@@ -365,10 +363,7 @@ use the "valuable_crate" feature of the "%{crate}" crate.
 %install
 %cargo_install
 
-%if %{with check}
-%check
-%cargo_test
-%endif
+
 
 %changelog
 %autochangelog
